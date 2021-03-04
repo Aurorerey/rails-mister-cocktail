@@ -1,1 +1,8 @@
 <h1> C'EST LA SHOW </h1>
+
+<!-- app/views/reviews/new.html.erb -->
+<%= simple_form_for [ @cocktail, @dose ] do |f| %>
+  <%= f.input :ingredient  %>
+  <%= f.input :description %>
+   <%= f.submit “Submit review”, class: “btn btn-primary” %>
+<% end %>
