@@ -1,4 +1,7 @@
-<h1> Cocktail list </h1>
+<h1>Le Wagon's cocktails</h1>
+    <p>Awesome beverages for developers nightlife</p>
+
+ <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
 
  <% @cocktails.each do |cocktail| %>
         <%= cocktail.name %>

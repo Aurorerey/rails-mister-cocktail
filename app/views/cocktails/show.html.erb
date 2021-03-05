@@ -1,7 +1,29 @@
 <h1> Your Cocktail </h1>
 
 <!-- app/views/reviews/new.html.erb -->
-<%= simple_form_for(@cocktail) do |f| %>
-      <%= f.input :name %>
-      <%= f.submit %>
-  <% end %>
+
+  <p><%= @cocktail.name %></p>
+
+   <%= link_to "Back to all cocktails", root_path %>
+
+
+   <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h3>Recipe</h3>
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Ingredient</th>
+            <th>Description</th>
+            <th>Action</th>
+          </thead>
+
+    <% @cocktail.doses.each do |dose| %>
+
+              <%= dose.ingredient.name %>
+              <%= dose.description %>
+
+                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+          <% end %>
